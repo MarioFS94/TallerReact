@@ -1,0 +1,19 @@
+/*
+ * OwnSidebar css File
+*/
+
+.OwnSidebar {
+    /* propertys here */
+}
+.ui.segment {
+    border-radius: initial !important; 
+    border: 0 !important;
+}
+.inlineFlex{
+    width:100%;
+    display: inline-flex;
+    margin: 1% 2% 2% 1%;
+}
+div.inlineFlex form{
+    margin: 0 auto !important;
+}

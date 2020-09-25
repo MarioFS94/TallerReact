@@ -1,3 +1,16 @@
+Instalacion
+----------------------------------------------------------------
+-	npx create-react-app 01
+-	npm install -g create-components-react 
+    - Utilizar -> ccr create NameComponent
+-   npm install semantic-ui-react semantic-ui-css
+    - Add import 'semantic-ui-css/semantic.min.css'
+-   npm install -g json-server
+    - En scripts-> package.json: "json": "json-server --watch ./src/assets/db.json",
+-   npm install react-bootstrap bootstrap
+    - https://react-bootstrap.github.io/getting-started/introduction/
+-   npm install axios
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

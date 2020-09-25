@@ -1,34 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
-import './App.css';
-import OwnHeader from './OwnHeader'
-import OwnFooter from './OwnFooter'
-import MainContent from './MainContent'
-//import OwnSidebar from './OwnSidebar';
-
-const App = () => {
-  return (
-    <div className="App">
-      <Router>
-        <header className="App-header">
-          <OwnHeader />        
-        </header>
-        <MainContent />
-        <OwnFooter />
-      </Router>
-    </div>
-  );
-}
-
-export default App;
-/*import React from 'react'
-import './App.css';
-import OwnHeader from './OwnHeader'
-import OwnFooter from './OwnFooter'
-import MainContent from './MainContent'
+import React from 'react'
+import './OwnSidebar.css';
+import menu from '../../resources/menu.svg';
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+  useParams
+} from 'react-router-dom'
 import {
   Button,
-  Checkbox,
+  Form,
   Grid,
   Header,
   Icon,
@@ -37,6 +19,9 @@ import {
   Segment,
   Sidebar,
 } from 'semantic-ui-react'
+import Login from "../../OwnHeader/Login";
+import Register from "../../OwnHeader/Register";
+import Products from "./Products";
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
   <Sidebar
@@ -82,12 +67,10 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
       Home
     </Menu.Item>
     <Menu.Item as='a'>
-      <Icon name='gamepad' />
-      Games
-    </Menu.Item>
-    <Menu.Item as='a'>
       <Icon name='camera' />
-      Channels
+      <Link to='/products'>
+        Productos
+      </Link>
     </Menu.Item>
   </Sidebar>
 )
@@ -104,8 +87,10 @@ function exampleReducer(state, action) {
       throw new Error()
   }
 }
-
-const App = () => {
+function openMenu() {
+  console.log('Abrir menu');
+}
+const OwnSidebar = (props) => {
   const [state, dispatch] = React.useReducer(exampleReducer, {
     animation: 'overlay',
     direction: 'left',
@@ -118,24 +103,6 @@ const App = () => {
 
   return (
     <div>
-
-      <Button
-        onClick={() =>
-          dispatch({ type: 'CHANGE_ANIMATION', animation: 'push' })
-        }
-      >
-        Push
-      </Button>
-
-      <Button
-        disabled={vertical}
-        onClick={() =>
-          dispatch({ type: 'CHANGE_ANIMATION', animation: 'slide along' })
-        }
-      >
-        Slide Along
-      </Button>
-
       <Sidebar.Pushable as={Segment} style={{ overflow: 'hidden' }}>
         {vertical && (
           <HorizontalSidebar
@@ -154,9 +121,37 @@ const App = () => {
 
         <Sidebar.Pusher dimmed={dimmed && visible}>
           <Segment basic>
-            <OwnHeader />
-            <MainContent />
-            <OwnFooter />
+
+            <div className='inlineFlex'>
+              <Button
+                onClick={() =>
+                  dispatch({ type: 'CHANGE_ANIMATION', animation: 'push' })
+                }
+              >
+                <img src={menu} alt="Toggle menu" onClick={ openMenu } />
+              </Button>
+              <Form>
+                <Form.Field inline>
+                  <input placeholder="Producto a buscar..."/>
+                  <Button>Search</Button>
+                </Form.Field>
+              </Form>
+            </div>
+
+              <Switch>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/register">
+                  <Register />
+                </Route>
+                <Route path="/products">
+                  <Products products={props.products}/>
+                </Route>
+                <Route path="/">
+                  {/* <Oferts /> */}
+                </Route>
+              </Switch>
           </Segment>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
@@ -164,4 +159,4 @@ const App = () => {
   )
 };
 
-export default App*/
+export default OwnSidebar

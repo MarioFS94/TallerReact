@@ -1,0 +1,14 @@
+/*
+ * Footer css File
+*/
+
+.footer {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center;
+    justify-content: center; */
+    font-size: 1.2em;
+    color: white;
+    padding: 2% 4%;
+}

@@ -1,0 +1,13 @@
+/*
+ * Products css File
+*/
+
+.Products {
+    /* propertys here */
+}
+#oldPrice{
+    text-decoration: line-through;
+}
+#arrowLeft:before{
+    content: ' \21F6';
+}
