@@ -53,7 +53,7 @@
 
 .banner {
     display: inline-block;
-    margin-left: 15%;
+    margin-left: 20%;
     min-width: 40%;
     cursor: pointer;
 }
@@ -78,4 +78,15 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);*/
     color: white;
+}
+
+/*Login/Register*/
+#userAccess{
+    margin: 2.2% 1% 0 18%;
+}
+#userAccess a{
+    text-decoration: none;
+}
+#userAccess a:hover {
+    color: cyan;
 }

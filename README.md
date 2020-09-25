@@ -6,10 +6,11 @@ Instalacion
 -   npm install semantic-ui-react semantic-ui-css
     - Add import 'semantic-ui-css/semantic.min.css'
 -   npm install -g json-server
-    - En scripts-> package.json: "json": "json-server --watch ./src/assets/db.json",
+    - En scripts-> package.json: "json": "json-server --watch ./src/assets/db.json --port 3004" y se iniciaria con npm run json
 -   npm install react-bootstrap bootstrap
     - https://react-bootstrap.github.io/getting-started/introduction/
 -   npm install axios
+-   npm i react-router-dom
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

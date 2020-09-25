@@ -12,10 +12,6 @@ const html = (
     <img src={logo} className="App-logo" alt="logo" />
   </div>
   
-  {/* <div id="menu" className="bg-secondary">
-    <img src={menu} alt="Toggle menu" onClick={ openMenu } />
-  </div> */}
-  
   <div className="banner">
     <div className="hero-image" onClick={ goAds }>
       <div className="hero-text">
@@ -24,7 +20,7 @@ const html = (
     </div>
   </div>
 
-  <p>
+  <p id="userAccess">
     <Link to="/login" className="App-link">
       Login
     </Link>
@@ -34,24 +30,19 @@ const html = (
     </Link>
   </p>
 </div>);
-function openMenu() {
-  console.log('Abrir menu');
-}
+
 function goAds() {
   alert('ANUNCIO');
 }
+
 class OwnHeader extends Component {
   // constructor(props){
     // super(props);
     // this.state = {};
   // }
-
   // componentWillMount(){}
-  componentDidMount(){
-    
-  }
+  //componentDidMount(){}
   // componentWillUnmount(){}
-
   // componentWillReceiveProps(){}
   // shouldComponentUpdate(){}
   // componentWillUpdate(){}
