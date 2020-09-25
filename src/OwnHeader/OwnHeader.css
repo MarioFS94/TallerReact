@@ -20,7 +20,10 @@
     font-size: calc(10px + 2vmin);
     color: white;
 }
-
+.card .header{
+    color: white !important;
+    padding-left: 1%;
+}
 .App-logo {
     height: 15vmin;
     pointer-events: none;
