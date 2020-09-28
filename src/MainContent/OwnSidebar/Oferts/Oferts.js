@@ -1,5 +1,5 @@
 import React from 'react';
-import './Products.css';
+import './Oferts.css';
 import {
   Form,
   Button,
@@ -8,10 +8,10 @@ import {
 } from 'semantic-ui-react'
 import axios from 'axios'
 
-class Products extends React.Component {  
+class Oferts extends React.Component {  
   
-  constructor() {
-    super();
+  constructor(props) {
+    super(/* props */);
     this.state = {
       value: '',
       products: [],//this.props.products
@@ -33,9 +33,8 @@ class Products extends React.Component {
   }
   componentDidMount(){
 
-    axios.get('http://localhost:3004/items').then(result => {
+    axios.get('http://localhost:3004/items?oferta=true').then(result => {
         
-        console.log(this.props);
         this.setState({
           products: result.data
         })
@@ -91,4 +90,4 @@ class Products extends React.Component {
     );
   }
 }
-export default Products;
+export default Oferts;

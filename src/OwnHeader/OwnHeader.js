@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './OwnHeader.css';
 import logo from '../resources/logo.svg';
-import {
-  BrowserRouter as Router,
-  Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const html = (
 <div className="header">

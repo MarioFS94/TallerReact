@@ -5,6 +5,9 @@
 .OwnSidebar {
     /* propertys here */
 }
+body{
+    background-color: #282c34 !important;
+}
 .ui.segment {
     border-radius: initial !important; 
     border: 0 !important;
@@ -16,4 +19,7 @@
 }
 div.inlineFlex form{
     margin: 0 auto !important;
+}
+div.sidebar.menu{
+    background-color: #282c34 !important;
 }

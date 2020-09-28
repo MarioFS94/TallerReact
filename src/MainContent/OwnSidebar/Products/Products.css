@@ -11,3 +11,9 @@
 #arrowLeft:before{
     content: ' \21F6';
 }
+.searchForm {
+    position: relative;
+    bottom: 60px;
+    margin: 0 auto;
+    width: 27%;
+}

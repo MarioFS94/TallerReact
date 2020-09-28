@@ -2,15 +2,12 @@ import React from 'react'
 import './OwnSidebar.css';
 import menu from '../../resources/menu.svg';
 import {
-  BrowserRouter as Router,
   Link,
   Route,
-  Switch,
-  useParams
+  Switch
 } from 'react-router-dom'
 import {
   Button,
-  Form,
   Grid,
   Header,
   Icon,
@@ -22,6 +19,7 @@ import {
 import Login from "../../OwnHeader/Login";
 import Register from "../../OwnHeader/Register";
 import Products from "./Products";
+import Oferts from "./Oferts";
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
   <Sidebar
@@ -62,11 +60,13 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
     visible={visible}
     width='thin'
   >
-    <Menu.Item as='a'>
+    <Menu.Item>
       <Icon name='home' />
-      Home
+      <Link to='/'>
+        Home
+      </Link>      
     </Menu.Item>
-    <Menu.Item as='a'>
+    <Menu.Item>
       <Icon name='camera' />
       <Link to='/products'>
         Productos
@@ -87,9 +87,7 @@ function exampleReducer(state, action) {
       throw new Error()
   }
 }
-function openMenu() {
-  console.log('Abrir menu');
-}
+
 const OwnSidebar = (props) => {
   const [state, dispatch] = React.useReducer(exampleReducer, {
     animation: 'overlay',
@@ -128,16 +126,16 @@ const OwnSidebar = (props) => {
                   dispatch({ type: 'CHANGE_ANIMATION', animation: 'push' })
                 }
               >
-                <img src={menu} alt="Toggle menu" onClick={ openMenu } />
+                <img src={menu} alt="Toggle menu"/>
               </Button>
-              <Form>
+              {/* <Form>
                 <Form.Field inline>
                   <input placeholder="Producto a buscar..."/>
                   <Button>Search</Button>
                 </Form.Field>
-              </Form>
+              </Form> */}
             </div>
-
+              
               <Switch>
                 <Route path="/login">
                   <Login />
@@ -146,10 +144,10 @@ const OwnSidebar = (props) => {
                   <Register />
                 </Route>
                 <Route path="/products">
-                  <Products products={props.products}/>
+                  <Products /* products={props.products} *//>
                 </Route>
-                <Route path="/">
-                  {/* <Oferts /> */}
+                <Route exact path="/">
+                  <Oferts /> 
                 </Route>
               </Switch>
           </Segment>

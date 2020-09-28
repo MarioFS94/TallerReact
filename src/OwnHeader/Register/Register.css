@@ -2,6 +2,7 @@
  * Register css File
 */
 
-.Register {
-    /* propertys here */
+.register form{
+    width: 45%;
+    margin:0 auto 5%;
 }

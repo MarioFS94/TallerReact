@@ -2,6 +2,7 @@
  * Login css File
 */
 
-.Login {
-    /* propertys here */
+.login form{
+    width: 45%;
+    margin:0 auto 5%;
 }
