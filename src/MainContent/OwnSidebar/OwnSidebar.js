@@ -20,6 +20,8 @@ import Login from "../../OwnHeader/Login";
 import Register from "../../OwnHeader/Register";
 import Products from "./Products";
 import Oferts from "./Oferts";
+import Cesta from "./Cesta";
+import Product from "./Products/Product";
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
   <Sidebar
@@ -98,7 +100,7 @@ const OwnSidebar = (props) => {
 
   const { animation, dimmed, direction, visible } = state
   const vertical = direction === 'bottom' || direction === 'top'
-
+  
   return (
     <div>
       <Sidebar.Pushable as={Segment} style={{ overflow: 'hidden' }}>
@@ -127,13 +129,7 @@ const OwnSidebar = (props) => {
                 }
               >
                 <img src={menu} alt="Toggle menu"/>
-              </Button>
-              {/* <Form>
-                <Form.Field inline>
-                  <input placeholder="Producto a buscar..."/>
-                  <Button>Search</Button>
-                </Form.Field>
-              </Form> */}
+              </Button>        
             </div>
               
               <Switch>
@@ -144,7 +140,13 @@ const OwnSidebar = (props) => {
                   <Register />
                 </Route>
                 <Route path="/products">
-                  <Products /* products={props.products} *//>
+                  <Products />
+                </Route>
+                <Route path="/product">
+                  <Product />
+                </Route>
+                <Route path="/cesta">
+                  <Cesta />
                 </Route>
                 <Route exact path="/">
                   <Oferts /> 

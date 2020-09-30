@@ -2,6 +2,15 @@
  * Oferts css File
 */
 
-.Oferts {
-    /* propertys here */
+#oferts header{
+    text-align: center;
+    position: relative;
+    bottom: 85px;
+    text-decoration: underline;
+    text-shadow: 2px 2px 8px #FF0000;
+    letter-spacing:5px;
+    font-size: 3em;
+    font-weight: bold;
+    width: 80%;
+    margin: 0 auto;
 }

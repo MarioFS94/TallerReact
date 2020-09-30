@@ -1,78 +1,106 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "name": "Mario",
-            "email": "mario@gmail.com",
-            "pass": "123"
-        },
-        {
-            "id": 2,
-            "name": "Juan",
-            "email": "juan@gmail.com",
-            "pass": "abc"
-        }
-    ],
-    "items": [
-        {
-            "id": 1,
-            "name": "Mesa escritorio",
-            "image": "https://assets.leroymerlin.es/is/image/lmes/82273163-0100/mesa-escritorio-maple-cajon-a150-b80.png",
-            "oferta": false,
-            "porc": 0,
-            "price": 12,
-            "description": "Mesa multiusos escritorio",
-            "author": "Mario"
-        },
-        {
-            "id": 2,
-            "name": "Silla cuero",
-            "image": "https://dhb3yazwboecu.cloudfront.net/990/Silla-para-comedor-simil-cuero-marron-oscuro-Bolero-GF955-2-unidades_l.jpg",
-            "oferta": false,
-            "porc": 0,
-            "price": 10.5,
-            "description": "Silla de cuero acolchada",
-            "author": "Mario"
-        },
-        {
-            "id": 3,
-            "name": "Televisión 8K",
-            "image": "https://images.samsung.com/is/image/samsung/latin-qled-q900r-row-qn82q900rbpxpa-frontblack-154871551?$PD_GALLERY_L_JPG$",
-            "oferta": false,
-            "porc": 0,
-            "price": 1201.5,
-            "description": "Televisión 8K con procesador octacore a 2Ghz/nucleo incorporado",
-            "author": "Mario"
-        },
-        {
-            "id": 4,
-            "name": "Batidora turbo",
-            "image": "https://medias.conforama.pt/media/650by551/655b2996e4c1df7fbadb9d6f0b6267c12f8f948b_Batidora_de_vaso_TRISTAR_BL_4463PR.jpg",
-            "oferta": true,
-            "porc": 50,
-            "price": 20.5,
-            "description": "Batidora con tres velocidades",
-            "author": "Mario"
-        },
-        {
-            "id": 5,
-            "name": "Pendrive 32Gb",
-            "image": "https://cruzmeraki.com/wp-content/uploads/2019/09/Memoria-USB-Kingston-DT106-32GB-DataTraveler-3.1-Cruz-Meraki-1.jpg",
-            "oferta": true,
-            "porc": 30,
-            "price": 15,
-            "description": "Pendrive USB de 32Gb",
-            "author": "Mario"
-        },
-        {
-            "id": 6,
-            "name": "Mesa despacho",
-            "image": "https://files.123inventatuweb.com/acens186902/image/mesa-despacho-recta-x10-sio.jpg",
-            "oferta": false,
-            "porc": 0,
-            "price": 22,
-            "description": "Mesa homologada para oficina",
-            "author": "Mario"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Mario",
+      "email": "mario@gmail.com",
+      "pass": "123"
+    },
+    {
+      "id": 2,
+      "name": "Juan",
+      "email": "juan@gmail.com",
+      "pass": "abc"
+    },
+    {
+      "name": "Maria",
+      "email": "maria@gmail.com",
+      "pass": "maria",
+      "id": 3
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Mesa escritorio",
+      "image": "https://assets.leroymerlin.es/is/image/lmes/82273163-0100/mesa-escritorio-maple-cajon-a150-b80.png",
+      "oferta": false,
+      "porc": 0,
+      "price": 12,
+      "description": "Mesa multiusos escritorio",
+      "author": "Mario"
+    },
+    {
+      "id": 2,
+      "name": "Silla cuero",
+      "image": "https://dhb3yazwboecu.cloudfront.net/990/Silla-para-comedor-simil-cuero-marron-oscuro-Bolero-GF955-2-unidades_l.jpg",
+      "oferta": false,
+      "porc": 0,
+      "price": 10.5,
+      "description": "Silla de cuero acolchada",
+      "author": "Mario"
+    },
+    {
+      "id": 3,
+      "name": "Televisión 8K",
+      "image": "https://images.samsung.com/is/image/samsung/latin-qled-q900r-row-qn82q900rbpxpa-frontblack-154871551?$PD_GALLERY_L_JPG$",
+      "oferta": false,
+      "porc": 0,
+      "price": 1201.5,
+      "description": "Televisión 8K con procesador octacore a 2Ghz/nucleo incorporado",
+      "author": "Mario"
+    },
+    {
+      "id": 4,
+      "name": "Batidora turbo",
+      "image": "https://medias.conforama.pt/media/650by551/655b2996e4c1df7fbadb9d6f0b6267c12f8f948b_Batidora_de_vaso_TRISTAR_BL_4463PR.jpg",
+      "oferta": true,
+      "porc": 50,
+      "price": 20.5,
+      "description": "Batidora con tres velocidades",
+      "author": "Mario"
+    },
+    {
+      "id": 5,
+      "name": "Pendrive 32Gb",
+      "image": "https://cruzmeraki.com/wp-content/uploads/2019/09/Memoria-USB-Kingston-DT106-32GB-DataTraveler-3.1-Cruz-Meraki-1.jpg",
+      "oferta": true,
+      "porc": 30,
+      "price": 15,
+      "description": "Pendrive USB de 32Gb",
+      "author": "Mario"
+    },
+    {
+      "id": 6,
+      "name": "Mesa despacho",
+      "image": "https://files.123inventatuweb.com/acens186902/image/mesa-despacho-recta-x10-sio.jpg",
+      "oferta": false,
+      "porc": 0,
+      "price": 22,
+      "description": "Mesa homologada para oficina",
+      "author": "Mario"
+    }
+  ],
+  "cesta": [
+    {
+      "id": 1,
+      "item": 1,
+      "cantidad": 1
+    },
+    {
+      "id": 2,
+      "item": 3,
+      "cantidad": 2
+    },
+    {
+      "id": 3,
+      "item": 5,
+      "cantidad": 1
+    },
+    {
+      "item": 2,
+      "cantidad": 1,
+      "id": 4
+    }
+  ]
 }

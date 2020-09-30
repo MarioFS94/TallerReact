@@ -2,8 +2,8 @@
  * Products css File
 */
 
-.Products {
-    /* propertys here */
+.cards a {
+    text-decoration: none !important;
 }
 #oldPrice{
     text-decoration: line-through;
@@ -11,9 +11,42 @@
 #arrowLeft:before{
     content: ' \21F6';
 }
-.searchForm {
+.productSearch{
+    display: flex;
     position: relative;
     bottom: 60px;
+    left: 94px;
     margin: 0 auto;
-    width: 27%;
+    width: 30%;
+}
+
+#carrito{
+    width: 15%;
+    position: relative;
+    left: 83%;
+    border: 1px solid black;
+    padding: 10px 0 10px 10px;
+    border-radius:10px;
+    cursor: pointer;
+}
+#carrito span{
+    margin-left: 10px;
+}
+
+#addItem{
+    position: absolute;
+    right: 4%;
+    bottom: 4px;
+    /* display: inline-block;
+    background-color: white; */
+    padding: 0 8px;
+    /* border: 1px solid black;
+    border-radius:15px; */
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card{
+    cursor: pointer;
 }

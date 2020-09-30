@@ -2,9 +2,6 @@
  * OwnSidebar css File
 */
 
-.OwnSidebar {
-    /* propertys here */
-}
 body{
     background-color: #282c34 !important;
 }
@@ -22,4 +19,7 @@ div.inlineFlex form{
 }
 div.sidebar.menu{
     background-color: #282c34 !important;
+}
+div.sidebar.menu .item:first-child{
+    margin-top: 6%;
 }

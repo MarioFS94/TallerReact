@@ -2,15 +2,6 @@
  * Header css File
 */
 
-/*.App-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;     
-  }*/
-
 .header {
     background-color: #282c34;
     display: flex;
@@ -59,9 +50,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-   /* width: 100%;*/
-    /* position: relative; */
-    /* height: var(--header-height); */
 }
 
 .hero-text {
@@ -69,25 +57,29 @@
     margin-right: 50%;
     letter-spacing: 0.3em;
     position: relative;
-    /* position: relative;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);*/
     color: white;
 }
 
 /*Login/Register*/
-#userAccess{
-    margin: 1.6% 1% 0 17%;
+.userAccess{
+    margin: 1.7% 1% 0 17%;
 }
-#userAccess a{
+.userAccess a{
     text-decoration: none;
 }
-#userAccess a:hover {
+.userAccess a:hover {
     color: cyan;
 }
+.userAccess table{
+    border-spacing: 5px;
+    border-collapse: separate;
+}
+.userAccess table tr td:last-child{
+    padding-left: 30%;
+}
+
 /* @media (max-width: 760px){
-    #userAccess{
+    .userAccess{
         margin: 2.2% 1% 0 6%;
     }
     .banner{
