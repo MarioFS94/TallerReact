@@ -16,26 +16,21 @@ class Product extends Component {
     };
   }
 
-  // componentWillMount(){}
   componentDidMount(){
     axios.get('http://localhost:3004/items/'+ this.props.location.state.id).then(res => {
       this.setState({product: res.data });
     });
   }
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
+
   addCesta = (id) => {
 
     axios.post('http://localhost:3004/cesta', {item: id, cantidad: 1}).then( message => {       
-      console.log(message);
       if (message.status === 201) {
         alert('Producto añadido a la cesta'); 
       }
     });
   };
+
   render() {
     return (
       <div className="product mb-4">

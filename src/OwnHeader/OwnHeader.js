@@ -14,17 +14,10 @@ class OwnHeader extends Component {
     };
   }
   
-  // componentWillMount(){}
   componentDidMount(){
     this.toJson();
   }
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  /* componentDidUpdate(){
-    this.toJson();
-  } */
+  
   goAds = () => {
     alert('ANUNCIO');
   }

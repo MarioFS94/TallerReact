@@ -36,8 +36,7 @@ class Login extends Component {
       this.setState({
         storage: event.target.checked
       });
-      console.log('storage', this.state.storage)
-    }    
+    }
   }
 
   handleSubmit(event) {    
@@ -75,14 +74,7 @@ class Login extends Component {
       }).catch(e => console.error(e));  
     event.preventDefault();
   }
-  //componentDidMount(){}
-  // componentWillMount(){}
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
-
+ 
   render() {
     return (
       <div className="login">
@@ -91,24 +83,24 @@ class Login extends Component {
           <fieldset>
             <legend>Login</legend>
             <Form.Input
-              /* error={{ content: 'Please enter your first name', pointing: 'below' }} */
               fluid
               label='Nombre:'
               placeholder='Nombre'
               id='form-input-first-name'
-              value={this.state.user} onChange={this.handleChange} 
+              value={this.state.user} onChange={e => this.handleChange(e)} 
             />
             <Form.Input
-              /* error='Contraseña incorrecta' */
               fluid
               type='password'
               label='Password:'
               placeholder='Password'
-              value={this.state.pass} onChange={this.handleChangePwd}
+              value={this.state.pass} onChange={e => this.handleChangePwd(e)}
             />
-            <Form.Checkbox
+            <Form.Input
+              className="chk"
+              type='checkbox'
               label='Recordar'         
-              checked={this.state.storage} onChange={this.handleChangeStorage}               
+              onChange={e => this.handleChangeStorage(e)}
             />
             <Button type='submit'>Login</Button>
           </fieldset>

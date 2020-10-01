@@ -17,6 +17,22 @@
       "email": "maria@gmail.com",
       "pass": "maria",
       "id": 3
+    },
+    {
+      "user": {
+        "name": "Miri",
+        "email": "miri@gmail.com",
+        "password": "666"
+      },
+      "id": 4
+    },
+    {
+      "user": {
+        "name": "alba",
+        "email": "alba@gmail.com",
+        "password": "654"
+      },
+      "id": 5
     }
   ],
   "items": [

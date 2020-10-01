@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './Register.css';
 import {Form, Button} from "semantic-ui-react";
 import axios from "axios";
+import { connect } from "react-redux"
+import {
+  addUser
+} from "../../actions/actions"
 
 class Register extends Component {
   constructor() {
@@ -52,39 +56,31 @@ class Register extends Component {
   }
 
   handleSubmit(event) {    
-    /* let response = axios.get('http://localhost:3004/users');
-    console.log('response: ', response);
-    let id = response.data.length;
-    console.log('id: ', id); */
+
     const user = {
-      //id: id++,
       name: this.state.username,
       email: this.state.email,
       password: this.state.pass
     };
-    /* if (this.state.terms) {
-      
-    } */
-    console.log('user: ', user);
-    if (this.state.pass === this.state.passCheck) {
-      axios.post('http://localhost:3004/users', { user }).then(result => {
-        console.log(result);
-        alert('REGISTRADO!');
-      }).catch(e => console.error(e)); 
-    }else{
-      alert('Las contraseñas no son iguales');
+    if (this.state.terms) {    
+      console.log('user: ', user);
+      if (this.state.pass === this.state.passCheck) {
+        axios.post('http://localhost:3004/users', { user }).then(result => {
+          console.log(result);
+
+          this.props.addUser(user);
+
+          alert('REGISTRADO!');
+        }).catch(e => console.error(e)); 
+      }else{
+        alert('Las contraseñas no son iguales');
+      }
+    }else {
+      alert('No has aceptado los términos y condiciones de uso');
     }
-     
+
     event.preventDefault();
   }
-
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
 
   render() {
     return (
@@ -94,7 +90,6 @@ class Register extends Component {
           <fieldset>
             <legend>Registro</legend>
             <Form.Input
-              /* error={{ content: 'Please enter your first name', pointing: 'below' }} */
               fluid
               label='Nombre'
               placeholder='Nombre'
@@ -102,7 +97,6 @@ class Register extends Component {
               value={this.state.username} onChange={this.handleChange}
             />
             <Form.Input
-              /* error='Please enter your last name' */
               fluid
               type='email'
               label='Email'
@@ -110,7 +104,6 @@ class Register extends Component {
               value={this.state.email} onChange={this.handleChangeEmail}
             />
             <Form.Input
-              /* error={{ content: 'Debe contener 1 mayúscula ,1 minúscula, 1 número, 1 carácter especial y una longitud mínima de 8 carácteres', pointing: 'below' }} */
               fluid
               type="password"
               label='Password'
@@ -118,20 +111,17 @@ class Register extends Component {
               value={this.state.pass} onChange={this.handleChangePwd}
             />
             <Form.Input
-              /* error={{ content: 'Debe contener 1 mayúscula ,1 minúscula, 1 número, 1 carácter especial y una longitud mínima de 8 carácteres', pointing: 'below' }} */
               fluid
               type="password"
               label='Repeat password'
               placeholder='Password'
               value={this.state.passCheck} onChange={this.handleChangeCPwd}
             />
-            <Form.Checkbox
+            <Form.Input
               label='Acepto los términos y las condiciones'
-              checked={this.state.terms} onChange={this.handleChangeTerms}
-              /* error={{
-                content: 'Debes aceptar los términos y las condiciones',
-                pointing: 'left',
-              }} */
+              className="chk"
+              type='checkbox'
+              onChange={e => this.handleChangeTerms(e)}              
             />
             <Button type='submit'>Registrarme</Button>
           </fieldset>
@@ -142,4 +132,13 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = state => ({
+  users: state.users,
+})
+
+const mapDispatchToProps = {
+  addUser
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (Register);
+//export default connect(mapStateToProps, { addUser }) (Register);

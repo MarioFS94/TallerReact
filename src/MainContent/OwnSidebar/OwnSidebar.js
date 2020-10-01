@@ -8,10 +8,7 @@ import {
 } from 'react-router-dom'
 import {
   Button,
-  Grid,
-  Header,
   Icon,
-  Image,
   Menu,
   Segment,
   Sidebar,
@@ -22,34 +19,6 @@ import Products from "./Products";
 import Oferts from "./Oferts";
 import Cesta from "./Cesta";
 import Product from "./Products/Product";
-
-const HorizontalSidebar = ({ animation, direction, visible }) => (
-  <Sidebar
-    as={Segment}
-    animation={animation}
-    direction={direction}
-    visible={visible}
-  >
-    <Grid textAlign='center'>
-      <Grid.Row columns={1}>
-        <Grid.Column>
-          <Header as='h3'>New Content Awaits</Header>
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row columns={3}>
-        <Grid.Column>
-          <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-        </Grid.Column>
-        <Grid.Column>
-          <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  </Sidebar>
-)
 
 const VerticalSidebar = ({ animation, direction, visible }) => (
   <Sidebar
@@ -90,7 +59,7 @@ function exampleReducer(state, action) {
   }
 }
 
-const OwnSidebar = (props) => {
+const OwnSidebar = () => {
   const [state, dispatch] = React.useReducer(exampleReducer, {
     animation: 'overlay',
     direction: 'left',
@@ -98,26 +67,16 @@ const OwnSidebar = (props) => {
     visible: false,
   })
 
-  const { animation, dimmed, direction, visible } = state
-  const vertical = direction === 'bottom' || direction === 'top'
+  const { /* animation ,*/ dimmed, /* direction ,*/ visible } = state
   
   return (
     <div>
       <Sidebar.Pushable as={Segment} style={{ overflow: 'hidden' }}>
-        {vertical && (
-          <HorizontalSidebar
-            animation='slide along'
-            direction='left'
-            visible={visible}
-          />
-        )}
-        {!vertical && (
-          <VerticalSidebar
-            animation='slide along'
-            direction='left'
-            visible={visible}
-          />
-        )}
+        <VerticalSidebar
+          animation='slide along'
+          direction='left'
+          visible={visible}
+        />
 
         <Sidebar.Pusher dimmed={dimmed && visible}>
           <Segment basic>

@@ -11,6 +11,12 @@ Instalacion
     - https://react-bootstrap.github.io/getting-started/introduction/
 -   npm install axios
 -   npm i react-router-dom
+-   npm i redux
+-   npm i react-redux
+-   Extension Chrome: Redux DevTools
+
+## Información sobre como implementar Redux en componentes de clase y componentes funcionales con hooks:
+https://www.johnraptis.dev/using-redux-with-classes-and-hooks/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

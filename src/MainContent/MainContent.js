@@ -12,22 +12,14 @@ class MainContent extends Component {
      };
    }
 
-  // componentWillMount(){}
   /* componentDidMount(){
     axios.get('http://localhost:3004/items').then(result => {
-        console.log('peops: ', result.data.filter(product => product.oferta));
         this.setState({
           products: result.data.filter(product => product.oferta)
         })
         this.prod =result.data.filter(product => product.oferta);
       }).catch(e => console.error(e));
-      console.log('state: ', this.prod);
   } */
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
 
   render() {
     return (

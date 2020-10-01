@@ -37,11 +37,7 @@
     position: absolute;
     right: 4%;
     bottom: 4px;
-    /* display: inline-block;
-    background-color: white; */
     padding: 0 8px;
-    /* border: 1px solid black;
-    border-radius:15px; */
     font-size: 1.5em;
     font-weight: bold;
     cursor: pointer;

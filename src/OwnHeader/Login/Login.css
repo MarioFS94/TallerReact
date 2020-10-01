@@ -16,3 +16,11 @@
     font-size:2em;
     text-align: center;
 }
+form .chk{
+    display: flex;
+    margin: 4% 0 !important;
+}
+form .chk .input{
+    width: 15% !important;
+    margin-top: 1% !important;
+}

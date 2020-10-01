@@ -8,7 +8,8 @@
     flex-direction: row;
     /* align-items: center;
     justify-content: center; */
-    font-size: calc(10px + 2vmin);
+    /** font-size: calc(10px + 2vmin); */
+    font-size: 2em;
     color: white;
 }
 .card .header{
@@ -62,7 +63,7 @@
 
 /*Login/Register*/
 .userAccess{
-    margin: 1.7% 1% 0 17%;
+    margin: 2% 1% 0 15%;
 }
 .userAccess a{
     text-decoration: none;
@@ -78,11 +79,15 @@
     padding-left: 30%;
 }
 
-/* @media (max-width: 760px){
+@media (max-width: 1100px){
+
     .userAccess{
-        margin: 2.2% 1% 0 6%;
+        margin: 3% auto !important;
     }
-    .banner{
-        margin-left: 12%;
+} 
+@media (max-width: 900px){
+
+    .userAccess{
+        margin: 0 auto !important;
     }
-} */
+} 

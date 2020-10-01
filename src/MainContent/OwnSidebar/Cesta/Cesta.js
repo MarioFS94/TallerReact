@@ -14,7 +14,6 @@ class Cesta extends Component {
     };
   }
 
-  // componentWillMount(){}
   componentDidMount() {
 
     axios.get('http://localhost:3004/cesta').then(res => {
@@ -58,11 +57,7 @@ class Cesta extends Component {
       });
     });
   }
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
+
   bought = (e) => {
     e.preventDefault();
     alert('Comprado');

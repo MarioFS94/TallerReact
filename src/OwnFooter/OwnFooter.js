@@ -1,39 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './OwnFooter.css';
 
-class Footer extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
+const Footer = () => {
 
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
-
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
-
-  render() {
-    return (
-      <div className="footer">
-        <table>
-          <thead>
-            <tr>
-              <th>Contactanos</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>mariofernandezs1@gmail.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    );
-  }
+  return (
+    <div className="footer">
+      <table>
+        <thead>
+          <tr>
+            <th><span>Contactanos</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>mariofernandezs1@gmail.com</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 }
+
 
 export default Footer;
