@@ -53,7 +53,6 @@ class Cesta extends Component {
             }
           }
         }
-        console.log('STATE: ', this.state);
       });
     });
   }

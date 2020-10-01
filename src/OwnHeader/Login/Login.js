@@ -46,7 +46,6 @@ class Login extends Component {
         if (result.data.length !== 0) {
           for (const user of result.data) {
             if (this.state.username === user.name) {
-              console.log('Nombre de usuario correcto.');
               if (this.state.pass === user.pass) {
                 this.setState({
                   userLogged: user
@@ -70,7 +69,6 @@ class Login extends Component {
           alert('Usuario desconocido');
         }
         
-        console.log('User logged: ', this.state.userLogged);
       }).catch(e => console.error(e));  
     event.preventDefault();
   }
@@ -87,14 +85,16 @@ class Login extends Component {
               label='Nombre:'
               placeholder='Nombre'
               id='form-input-first-name'
-              value={this.state.user} onChange={e => this.handleChange(e)} 
+              value={(localStorage.getItem('local-credentials')) ? JSON.parse(localStorage.getItem('local-credentials')).name : this.state.user} 
+              onChange={e => this.handleChange(e)} 
             />
             <Form.Input
               fluid
               type='password'
               label='Password:'
               placeholder='Password'
-              value={this.state.pass} onChange={e => this.handleChangePwd(e)}
+              value={(localStorage.getItem('local-credentials')) ? JSON.parse(localStorage.getItem('local-credentials')).pass : this.state.pass} 
+              onChange={e => this.handleChangePwd(e)}
             />
             <Form.Input
               className="chk"

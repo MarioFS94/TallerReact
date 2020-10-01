@@ -14,3 +14,6 @@
     width: 80%;
     margin: 0 auto;
 }
+#oferts #carrito {
+    bottom: 76px !important;
+}

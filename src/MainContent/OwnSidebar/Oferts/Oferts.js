@@ -9,6 +9,8 @@ import {
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import carrito from '../../../resources/carrito.svg'
+import { connect } from "react-redux"
+import { addCesta } from "../../../actions/actions"
 
 class Oferts extends React.Component {  
   
@@ -26,9 +28,15 @@ class Oferts extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  addCesta = (e) => {
-    this.setState({cesta: this.state.cesta + 1});
-    e.preventDefault();
+  addCesta = (id) => {
+    axios.post('http://localhost:3004/cesta', {item: id, cantidad: 1}).then( message => {       
+      if (message.status === 201) {
+        alert('Producto añadido a la cesta'); 
+        this.props.addCesta({item: id, cantidad: 1});
+      } else {
+        alert('ERROR al añadir producto a la cesta.');
+      }
+    });
   };
 
   handleChange(event) {
@@ -81,7 +89,7 @@ class Oferts extends React.Component {
           {
             (this.state.products && this.state.products.length !== 0) ?
             this.state.products.map((product) => (
-              <Card key={product.id} onClick={() => this.goItem(product.id)}>
+              <Card key={product.id}>
                 <Image src={product.image} alt={product.name} wrapped ui={false} onClick={() => this.goItem(product.id)} />
                 <Card.Content onClick={() => this.goItem(product.id)}>
                   <Card.Header>{product.name}</Card.Header>
@@ -101,10 +109,7 @@ class Oferts extends React.Component {
                 </Card.Content>
                 <Card.Content extra>
                   <>
-                    {
-                      product.oferta && <><span id="oldPrice">{product.price}</span> <span id="arrowLeft"></span></>
-                    }
-                    
+                    { product.oferta && <><span id="oldPrice">{product.price}</span>&nbsp;<span id="arrowLeft"></span>&nbsp;</> }                    
                     { product.oferta ? product.price - (product.price * (product.porc / 100)) : product.price } €
                     <button id="addItem" className="btn btn-primary" onClick={() => this.addCesta(product.id)}>+</button>
                   </>
@@ -122,4 +127,13 @@ class Oferts extends React.Component {
     );
   }
 }
-export default withRouter(Oferts);
+
+const mapStateToProps = state => ({
+  prod: state.cesta,
+})
+
+const mapDispatchToProps = {
+  addCesta
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps) (Oferts));

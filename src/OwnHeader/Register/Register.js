@@ -3,9 +3,7 @@ import './Register.css';
 import {Form, Button} from "semantic-ui-react";
 import axios from "axios";
 import { connect } from "react-redux"
-import {
-  addUser
-} from "../../actions/actions"
+import { addUser } from "../../actions/actions"
 
 class Register extends Component {
   constructor() {
@@ -47,7 +45,6 @@ class Register extends Component {
     });
   }
   handleChangeTerms(event) {
-    console.log('terms: ', event.target.checked);
     if (event.target.checked) {
       this.setState({
         terms: event.target.checked
@@ -57,20 +54,31 @@ class Register extends Component {
 
   handleSubmit(event) {    
 
-    const user = {
+    /* const user = {
       name: this.state.username,
       email: this.state.email,
       password: this.state.pass
-    };
+    }; */
     if (this.state.terms) {    
-      console.log('user: ', user);
       if (this.state.pass === this.state.passCheck) {
-        axios.post('http://localhost:3004/users', { user }).then(result => {
-          console.log(result);
-
-          this.props.addUser(user);
-
-          alert('REGISTRADO!');
+        axios.post('http://localhost:3004/users', {
+          name: this.state.username,
+          email: this.state.email,
+          password: this.state.pass
+        }).then(result => {
+          
+          if (result.status === 201) {
+            this.props.addUser({
+              name: this.state.username,
+              email: this.state.email,
+              password: this.state.pass
+            });
+            alert('REGISTRADO!');
+          } else {
+            alert('ERROR, vuelva a intentarlo');
+            window.location.reload();
+          }
+          
         }).catch(e => console.error(e)); 
       }else{
         alert('Las contraseñas no son iguales');

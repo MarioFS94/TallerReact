@@ -1,4 +1,7 @@
-import { ADD_USER } from "../actions/types";
+import { 
+    ADD_USER,
+    ADD_CESTA
+} from "../actions/types";
 
 const initialState = {
     users: [],
@@ -9,10 +12,14 @@ const initialState = {
   export default function(state = initialState, action) {
     switch (action.type) {
         case ADD_USER:
-        return {
-            user: [action.payload, ...state.users]
-        }
-      default:
-        return state
+            return {
+                user: [action.payload, ...state.users]
+            }
+        case ADD_CESTA:
+            return {
+                prod: [action.payload, ...state.cesta]
+            }
+        default:
+            return state
     }
   }

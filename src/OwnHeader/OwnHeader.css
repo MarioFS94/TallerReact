@@ -70,6 +70,7 @@
 }
 .userAccess a:hover {
     color: cyan;
+    text-decoration: none;
 }
 .userAccess table{
     border-spacing: 5px;

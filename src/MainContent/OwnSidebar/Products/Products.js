@@ -9,6 +9,8 @@ import {
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import carrito from '../../../resources/carrito.svg'
+import { connect } from "react-redux"
+import { addCesta } from "../../../actions/actions"
 
 class Products extends React.Component {  
   
@@ -16,7 +18,7 @@ class Products extends React.Component {
     super();
     this.state = {
       value: '',
-      products: [],//this.props.products
+      products: [],
       cesta: 0,
       searched: false,
       loading: false,//controlar entre llamadas axios lo que tarda en traer los datos del server
@@ -52,9 +54,11 @@ class Products extends React.Component {
   addCesta = (id) => {
 
     axios.post('http://localhost:3004/cesta', {item: id, cantidad: 1}).then( message => {       
-      console.log(message);
       if (message.status === 201) {
         alert('Producto añadido a la cesta'); 
+        this.props.addCesta({item: id, cantidad: 1});
+      } else {
+        alert('ERROR al añadir producto a la cesta.');
       }
     });
   };
@@ -106,8 +110,12 @@ class Products extends React.Component {
                 <Card.Content extra>
                   <>
                     {
-                      product.oferta && <><span id="oldPrice">{product.price}</span> <span id="arrowLeft"></span></>
-                    }                  
+                      product.oferta && 
+                      <>
+                        <span id="oldPrice">{product.price}</span>&nbsp;
+                        <span id="arrowLeft"></span>&nbsp;
+                      </>
+                    }
                     { product.oferta ? product.price - (product.price * (product.porc / 100)) : product.price } €
                     <button id="addItem" className="btn btn-primary" onClick={() => this.addCesta(product.id)}>+</button>
                   </>
@@ -125,4 +133,13 @@ class Products extends React.Component {
     );
   }
 }
-export default withRouter(Products);
+
+const mapStateToProps = state => ({
+  prod: state.cesta,
+})
+
+const mapDispatchToProps = {
+  addCesta
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps) (Products));
